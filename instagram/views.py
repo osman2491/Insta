@@ -24,3 +24,17 @@ def home(request):
         posts = None
 
     return render(request, 'instagrm/index.html', { 'posts': posts, 'form': form })
+
+
+def search_results(request):
+
+    if 'profile' in request.GET and request.GET["profile"]:
+        search_term = request.GET.get("profile")
+        searched_profile = Image.search_by_profile(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'instagrm/search.html',{"message":message,"profile": searched_profile})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'instagrm/search.html',{"message":message})
