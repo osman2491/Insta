@@ -14,6 +14,7 @@ def home(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            post.image_profile = request.user.profile
             post.save()
     else:
         form = PostForm()
