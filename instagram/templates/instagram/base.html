@@ -1,0 +1,44 @@
+{% load bootstrap4 %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+
+
+  
+    <title>  Instagram </title>
+  
+  
+
+  {% block styles %}
+    {% bootstrap_css %}
+  
+
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+
+  {% endblock %}
+
+</head>
+<body>
+
+    {% include "navbar.html"%}
+
+    {% block content %}  {%endblock%}
+
+    {% block scripts %}
+      <script>
+        UPLOADCARE_PUBLIC_KEY = 'c0aab0aa2eda6dd4affb';
+      </script>
+      
+      <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     {% bootstrap_javascript %}
+    {% endblock %}
+    
+</body>
+</html>
+
