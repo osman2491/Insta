@@ -7,6 +7,7 @@ urlpatterns=[
     
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^$', views.home, name = 'welcome'),
+    url(r'^profile/', views.profile, name='profile'),
     
 ]
 if settings.DEBUG:
