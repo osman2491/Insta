@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/static/css/all.css">
+
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    
+  <a  class="navbar-brand  col-sm-3 col-md-2 mr-0" href="{% url 'welcome'%}"><i class="fab fa-instagram" style="font-size: 40px; color: mediumvioletred;"></i> <span
+    id="insta">Instagram</span></a>
+  <form class="form-inline" action="{% url 'search_results'%}">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  
+  
+
+  <div class="nav-item">
+  {% if user.is_authenticated %}
+          <a href="/logout">Logout</a>
+  {% else %}
+  <li>
+    <a class='btn btn-default' href="/accounts/login">Login</a>
+  </li>
+
+  {% endif %}
+</div>
+</form>
+</div>
+</nav>
