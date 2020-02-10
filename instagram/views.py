@@ -25,7 +25,6 @@ def home(request):
 
     return render(request, 'instagrm/index.html', { 'posts': posts, 'form': form })
 
-
 def search_results(request):
 
     if 'profile' in request.GET and request.GET["profile"]:
@@ -38,3 +37,5 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'instagrm/search.html',{"message":message})
+
+
