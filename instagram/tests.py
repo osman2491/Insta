@@ -8,3 +8,7 @@ class ImageTestClass(TestCase):
    def setUp(self):
       self.profile=Profile(id = 1)
       self.image_one=Image(image_name='moana',image_caption='By the seashore',image_comments= 'Quality image')
+
+    # Testing Instance
+   def test_instance(self):
+      self.assertTrue(isinstance(self.image_one,Image
